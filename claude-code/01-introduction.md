@@ -77,3 +77,18 @@ Claude GitHub integration - 1st integration is ability to mention Claude with @c
 You can customise this GitHub actions to e.g. enable use of the Playwright MCP server tools, with custom instructions on how to run the system within the browser, and use these tools.
 
 Can raise an issue, mentioning @claude, and get Claude to automatically look and fix the issue.
+
+### Hooks
+
+PreToolUse and PostToolUser hooks can be used to run commands every time Claude runs a tool.
+
+PreToolUse 
+ - Good for preventing things from happening and sending Claude back an error message, e.g. prevent secrets being read and uploaded to Claude.
+ - Can also use for, if editing a specific section of code, to open a new instance of Claude that will check if the new code to be written is a duplicate of existing code and feed back
+
+PostToolUse 
+- Good for checking for build errors after making any change. E.g. after editing TypeScript, check for any type errors.
+
+There are other types of hooks beyond PreToolUse and PostToolUse.
+
+Claude Code SDK can be used to programatically call Claude Code in hooks, scripts or helper commands. You can call by CLI or use TypeScript/Python/etc SDKs.
