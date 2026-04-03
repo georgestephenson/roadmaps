@@ -13,3 +13,15 @@
 6. Community tools can extend Claude by integrating Claude with MCP servers providing external servers. For example GitHub or Jira integrations. There are third-party tools for example Conductor, a tool to run many Claudes. Third-party extensions for Claude can be installed with `/plugin` command.
 
 Claude has features such as "Enterprise Search" which can collect data sources across an entire organisation and make them all available. You can grant access to your emails or calendar or internal documents and ask questions across all this data. You can combine this with research mode to agentically do a more thorough search or investigation.
+
+## What you can do
+
+- Automate tedious tasks - tests, lint errors, merge conflicts, dependency updates, release notes
+- Implement features, fix bugs from an issue report
+- Work directly with Git to commit and open pull requests. Automate code reviews in CI.
+- Connect to tools with MCP, e.g. tickets in Jira
+- Use CLAUDE.md to remember coding standards, architectural decisions, etc. Use custom commands for repeatable workflows. Use hooks to run commands before or after Claude Code does an action (uses a tool).
+- Subagents can work on different parts of a task simultaneously coordinated by a lead agent.
+- `claude` in terminal follows Unix philosophy, can pipe in input, chain it with other tools.
+- Cloud or desktop scheduled tasks to run an agent on schedule.
+- Control remotely, from web, phone app, desktop app or team chat
