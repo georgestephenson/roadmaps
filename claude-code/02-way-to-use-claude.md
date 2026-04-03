@@ -11,3 +11,5 @@
     Quite OpenClaw-esque. Can control using a Discord bot (BotFather). Use Telegram to talk to the Discord bot.
 
 6. Community tools can extend Claude by integrating Claude with MCP servers providing external servers. For example GitHub or Jira integrations. There are third-party tools for example Conductor, a tool to run many Claudes. Third-party extensions for Claude can be installed with `/plugin` command.
+
+Claude has features such as "Enterprise Search" which can collect data sources across an entire organisation and make them all available. You can grant access to your emails or calendar or internal documents and ask questions across all this data. You can combine this with research mode to agentically do a more thorough search or investigation.
