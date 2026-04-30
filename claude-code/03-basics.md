@@ -1,5 +1,9 @@
 # Understanding the Basics
 
+## Models
+
+- Haiku 4.5: released Oct 2025, smallest Claude model. Better coding performance than Clause Sonnet 4 according to [Anthropic's benchmarks](https://www.anthropic.com/news/claude-haiku-4-5), but one-third the cost and twice the speed. Good for low latency use cases. Displays "low rates of concerning behaviors". AI Safety Level 2 (ASL-2) compared to ASL-3 for more sophisticated models.
+
 ## Writing a good CLAUDE.md
 
 - Use `/init` to ask Claude to create one by analysing your codebase.
