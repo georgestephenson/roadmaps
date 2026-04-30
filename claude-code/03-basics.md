@@ -2,7 +2,29 @@
 
 ## Models
 
-- Haiku 4.5: released Oct 2025, smallest Claude model. Better coding performance than Clause Sonnet 4 according to [Anthropic's benchmarks](https://www.anthropic.com/news/claude-haiku-4-5), but one-third the cost and twice the speed. Good for low latency use cases. Displays "low rates of concerning behaviors". AI Safety Level 2 (ASL-2) compared to ASL-3 for more sophisticated models.
+### Haiku 4.5
+
+- Released Oct 2025 as smallest Claude model.
+- Better coding performance than Clause Sonnet 4 according to [Anthropic's benchmarks](https://www.anthropic.com/news/claude-haiku-4-5), but one-third the cost and twice the speed.
+- Can accomplish more within your account usage limits.
+- Good for low latency use cases.
+- Displays "low rates of concerning behaviors". AI Safety Level 2 (ASL-2) compared to ASL-3 for more sophisticated models.
+- "Pricing for Haiku 4.5 on the Claude Platform starts at $1 per million input tokens and $5 per million output tokens"
+
+### Sonnet 4.6
+
+- Released Feb 2026 after Sonnet 4.5 (Sep 2025).
+- Described as "workhorse" and "frontier" model, ideal balance of advanced reasoning and speed.
+- "Pricing for Sonnet 4.6 starts at $3 per million input tokens and $15 per million output tokens"
+- Users preferred Sonnet 4.6 over Opus 4.5 59% of the time, so it has got close to the previous Opus model's level of performance.
+
+### Opus 4.7
+
+- Released Apr 2026
+- Premium models for tasks no other model can handle
+- Generally has the best benchmark results of Claude models
+- "Pricing for Opus 4.7 starts at $5 per million input tokens and $25 per million output tokens"
+- Higher resolution image support for reading images, 2576px / 3.75MP (increased from previous limit of 1568px / 1.15MP)
 
 ## Writing a good CLAUDE.md
 
