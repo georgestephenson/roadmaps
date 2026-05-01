@@ -128,3 +128,16 @@ Identify concrete use cases for your skill before producing the files such as `S
 - Subagents exist outside the context with their own separate context, so it's another way to manage context scope and limits.
 - The command `/context` gives a visual overview of how many tokens each components occupies (conversation history, CLAUDE.md, etc).
 - Opus 4.7 supports a 1M size context window, Sonnet 4.6 also does if "extra usage" is enabled. By default Claude context windows is 200k, apparently
+
+## Permissions
+
+- View and manage permissions using `/permissions`
+- Sourced from `settings.json`
+- Permission tiers are Read-only, Bash commands, and File modification, in order of power/risk.
+- Rules are Allow, Ask and Deny.
+- By default, asks for permission before editing files or executing commands.
+- Control whether to ask first or not, and set within a session or permanently
+- Accept-Edits mode: editing allowed but ask for permission before executing commands
+- Plan Mode: restrict Claude Code to read-only analysis. Can control whether a permission applies for plan mode analysis only, or can be used for command execution and file editing
+- Delegate mode - lead agent restricted to delegating subagents
+- Bypass-Permissions Mode, all actions allowed (yolo mode)
