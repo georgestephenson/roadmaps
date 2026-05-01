@@ -141,3 +141,13 @@ Identify concrete use cases for your skill before producing the files such as `S
 - Plan Mode: restrict Claude Code to read-only analysis. Can control whether a permission applies for plan mode analysis only, or can be used for command execution and file editing
 - Delegate mode - lead agent restricted to delegating subagents
 - Bypass-Permissions Mode, all actions allowed (yolo mode)
+
+## Tools
+
+- Tools allow Claude Code to perform different local actions on the computer
+- Running bash commands
+- Read and edit for file manipulations
+- Glob and grep for searching
+- WebSearch for searching web
+- Full list of tools available from the tools reference [here](https://code.claude.com/docs/en/tools-reference).
+- Claude Code has features for [advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use), essentially this save context window space by searching tools on demand, invoking them and finding usage examples without consuming the context window.
