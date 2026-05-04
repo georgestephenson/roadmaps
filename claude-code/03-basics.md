@@ -151,3 +151,9 @@ Identify concrete use cases for your skill before producing the files such as `S
 - WebSearch for searching web
 - Full list of tools available from the tools reference [here](https://code.claude.com/docs/en/tools-reference).
 - Claude Code has features for [advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use), essentially this save context window space by searching tools on demand, invoking them and finding usage examples without consuming the context window.
+
+## MCP
+
+- Following Anthropic's course [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol)
+- Can use Python MCP SDK to very quickly build an MCP server from methods
+- Distinction between MCP Server providing resources and MCP Client that manages connection and session to the MCP Server and cleans up afterwards. MCP client exposes the MCP server resources to the rest of the codebase. - Implementing `list_tools` and `call_tool` in MCP client is enough to start making use of the tools.
