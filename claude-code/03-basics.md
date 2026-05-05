@@ -157,3 +157,20 @@ Identify concrete use cases for your skill before producing the files such as `S
 - Following Anthropic's course [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol)
 - Can use Python MCP SDK to very quickly build an MCP server from methods
 - Distinction between MCP Server providing resources and MCP Client that manages connection and session to the MCP Server and cleans up afterwards. MCP client exposes the MCP server resources to the rest of the codebase. - Implementing `list_tools` and `call_tool` in MCP client is enough to start making use of the tools.
+
+### Tools
+
+- Actions that the LLM can execute
+- Model-controlled
+
+### Resources
+
+- Resources expose data from the MCP server to the client
+- So the resource can be accessed by the user or client application typically before the LLM model even runs, to inject additional context into the conversation.
+- Different to tasks where the expectation is the LLM model will call them itself.
+- App-controlled
+
+### Prompts
+
+- Custom-tailored prompts that will make best use of the MCP server, available to the client
+- User-controlled, user decides when to use
