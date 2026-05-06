@@ -174,3 +174,9 @@ Identify concrete use cases for your skill before producing the files such as `S
 
 - Custom-tailored prompts that will make best use of the MCP server, available to the client
 - User-controlled, user decides when to use
+
+## Plugins
+
+- Plugins are modules that extend Claude Code with a collection or skills, agents, hooks and MCP servers.
+- There can be many marketplaces for Claude plugins. The official one is `claude-plugins-official` and automatically available when Claude Code is installed.
+- When trying, I could only install plugins using `/plugin` command from the CLI. But can also install plugins within VS Code extension using the extension's UI.
