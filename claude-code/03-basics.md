@@ -180,3 +180,41 @@ Identify concrete use cases for your skill before producing the files such as `S
 - Plugins are modules that extend Claude Code with a collection or skills, agents, hooks and MCP servers.
 - There can be many marketplaces for Claude plugins. The official one is `claude-plugins-official` and automatically available when Claude Code is installed.
 - When trying, I could only install plugins using `/plugin` command from the CLI. But can also install plugins within VS Code extension using the extension's UI.
+
+## Hooks
+
+Run shell commands on certain events before/after Claude takes actions
+
+Examples given
+- A system notification hook when Claude needs input. Add `Notification` type hook to `~/.claude/settings.json`
+- Call Prettier to auto-format code after edits (PostToolUse)
+- Re-inject prompt after compaction: SessionStart type hook with `"matcher": "compact"`
+
+Matchers filter events based on conditions so the hook only runs some of the time conditionally, not every time that event happens
+
+The `if` field filters hooks by specific tool calls
+
+PreToolUse and PostToolUse hooks can be used to run commands every time Claude runs a tool.
+
+PreToolUse 
+ - Good for preventing things from happening and sending Claude back an error message, e.g. prevent secrets being read and uploaded to Claude.
+ - Can also use for, if editing a specific section of code, to open a new instance of Claude that will check if the new code to be written is a duplicate of existing code and feed back
+
+PostToolUse 
+- Good for checking for build errors after making any change. E.g. after editing TypeScript, check for any type errors.
+
+There are other types of hooks beyond PreToolUse and PostToolUse.
+
+Claude Code SDK can be used to programatically call Claude Code in hooks, scripts or helper commands. You can call by CLI or use TypeScript/Python/etc SDKs.
+
+### Prompt Hooks
+
+You can build a hook that sends a prompt to Claude, rather than using a deterministic command, to return the output from the LLM
+
+### Agent Hooks
+
+Like prompt-based hooks, however instead of only one LLM call, it spawns a Claude subagent to do tasks
+
+### HTTP Hooks
+
+POST to a HTTP endpoint instead of running shell command
