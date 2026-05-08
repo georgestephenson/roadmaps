@@ -18,5 +18,9 @@
 
 | Name | Description |
 | ---- | ----------- |
-| `claude` | Launch Claude CLI for current directory, indexing local files |
+| `claude` | Launch Claude Code CLI for current directory, indexing local files |
 | `claude -r` | Same as `claude --resume`, passing a previous conversion session ID as input, to jump back into that conversation, or without any parameters to launch an interactive search of previous conversations |
+| `claude "query"` | Launch Claude Code CLI with an initial prompt |
+| `claude -p` | Same as `claude --print`, to start the agent based on one prompt input, allowing it to run agentically, then return with a single output |
+| `claude -c` | Reopens Claude with previous most recent conversation |
+| `claude --add-dir` | By default Claude opens with the current directory as the working session. Can specify to add directories to the working session, permitting reading and writing files in those directories |
