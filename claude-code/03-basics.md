@@ -218,3 +218,32 @@ Like prompt-based hooks, however instead of only one LLM call, it spawns a Claud
 ### HTTP Hooks
 
 POST to a HTTP endpoint instead of running shell command
+
+## Subagents
+
+Subagents are AI assistants for specific tasks.
+
+### Built-in subagents
+
+Used by Claude internally for certain tasks
+
+- Explore uses the Haiku fast model to search code and look for files
+- Plan for understanding codebase outside of main agent in plan mode
+- General-purpose
+- Subagent for updating status line in Claude CLI when you call /statusline
+- `claude-code-guide` subagent when you ask questions about Claude Code features
+
+### Custom agents
+
+You can use `/agents` to build an gent from prompts and preferences.
+
+For example, I've created one in this repo, which has called itself `note-accuracy-reviewer`, to review all the notes I've added here for grammar, spelling and factual correctness. Claude added the agent to `.claude/agents/note-accuracy-reviewer.md`
+
+They can be added to a project, personal profile, plugin, organisation wide in "managed settings".
+
+Note these agents can run as as the main thread agent using `claude --agent` or be spawned by another agent as subagents.
+
+- Has frontmatter fields in the `.md` file such as name and model - the agent config selects a model for the agent to run on.
+- Control tools the agent can run
+- Control which subagents an agent can run as the main agent
+- Tasks can be automatically delegated to agents based on their `description` in the agent frontmatter. Or you can explicitly run them (with explicit prompts, or explicit control)
