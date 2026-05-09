@@ -49,3 +49,14 @@
 | `/context` | Detailed breakdown of current usage of the context window in terms of tokens: system prompt, tools, agents, skills, etc. |
 | `/compact` | Ask Claude to summarise the conversation history and replace it with the summary, acting as compaction of the context, in order to save tokens in the context window. You can also add a prompt emphasising which aspects of the history to summarise |
 | `/memory` | Opens menu to edit the various Claude memory files: project `CLAUDE.md`, user-specific `CLAUDE.md`, auto-memory folder maintained by Claude itself, agent memory |
+
+## Configuration Commands
+
+| Name | Description |
+| ---- | ----------- |
+| `/config` | Opens config section of settings menu |
+| `/permissions` | Opens menu for controlling allow/ask/deny permissions on tool use for each tool, and also can add directories to the current workspace (defaults to cwd) |
+| `/model` | Switch models between Haiku, Sonnet, Open, etc, and switch effort level from the default |
+| `/agents` | Menu for agents running, in library, and option to create new agent. Can invoke subagents |
+| `/hooks` | Read-only menu displaying currently active hooks matching the various preset events. Edit settings.json or ask Claude to add or modify the hooks on these events |
+| `/mcp` | Used to manage existing MCP servers - authenticate, reconnect, disable etc. Add new MCP servers using `claude mcp add` |
