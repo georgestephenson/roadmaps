@@ -14,7 +14,7 @@
 | \ | Multiline input in the prompt, same as most terminals, bash etc. |
 | @ | Point Claude at specific file or folder, to prioritise reading that content into the conversation context |
 
-## Commands
+## `claude` flags and params
 
 | Name | Description |
 | ---- | ----------- |
@@ -24,3 +24,19 @@
 | `claude -p` | Same as `claude --print`, to start the agent based on one prompt input, allowing it to run agentically, then return with a single output |
 | `claude -c` | Reopens Claude with previous most recent conversation |
 | `claude --add-dir` | By default Claude opens with the current directory as the working session. Can specify to add directories to the working session, permitting reading and writing files in those directories |
+
+## Session Commands
+
+| Name | Description |
+| ---- | ----------- |
+| `/help` | Interactive help menu (most common shortcuts/commands listed, linking to a more comprehensive overview) |
+| `/usage` | On subscription plans, use this command to check your current usage and limits. This seems to now be merged with `/cost` command |
+| `/clear` | Clears conversation context, useful for preventing "context drift" where model may be confused by irrelevant history |
+| `/exit` | Exit CLI, clean shutdown saving conversation history |
+| `/export` | Export conversation history to the clipboard or to a file, in markdown format |
+| `/status` | Current status of session and Claude CLI including cwd (current working directory) and active MCP servers |
+| `/statusline` | Takes as parameter a prompt describing what you want a persistent status line below the prompt entry to look like in the CLI |
+| `/resume` | Select a previous session to resume |
+| `/rewind` | Rewind back to previous prompt in the current session |
+| `/plan` | Enable plan mode (same as Shift+Tab) |
+| `/doctor` | Diagnose and troubleshoot issues with Claude. For example, displays current version, and any issues with plugins |
