@@ -60,3 +60,14 @@
 | `/agents` | Menu for agents running, in library, and option to create new agent. Can invoke subagents |
 | `/hooks` | Read-only menu displaying currently active hooks matching the various preset events. Edit settings.json or ask Claude to add or modify the hooks on these events |
 | `/mcp` | Used to manage existing MCP servers - authenticate, reconnect, disable etc. Add new MCP servers using `claude mcp add` |
+
+## Hooks
+
+Events for hooks
+
+- SessionStart: triggers at the very beginning of a new Claude session (or when it resumes, in the user's CLI). Can be used to bootstrap environment and inject context, using a command. For example, although the context is based on the cwd, there might be other resources on the web or in other systems derived from the cwd, that we can go and grab.
+- SessionEnd: teardown event. Clean up, archive, report information, capture session metrics, before session is terminated. Has a "reason" matcher that gives the reason for ending.
+- PreToolUse: hook executes immediately when Claude decides to use a tool, before it runs, to check the action is correct, or provide context
+- PostToolUse: triggers immediately after a tool is used, to automate actions from the results, or cleanup, or verify quality
+- UserPromptSubmit: triggers the moment user pressed enter when submitting a prompt into Claude Code - you can validate, enhance or rewrite the prompt
+- Stop: triggers when Claude is ready to stop and return control back to the user (interaction from Claude ends and user interaction is requested again)
