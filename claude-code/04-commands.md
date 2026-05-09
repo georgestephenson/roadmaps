@@ -40,3 +40,12 @@
 | `/rewind` | Rewind back to previous prompt in the current session |
 | `/plan` | Enable plan mode (same as Shift+Tab) |
 | `/doctor` | Diagnose and troubleshoot issues with Claude. For example, displays current version, and any issues with plugins |
+
+## Context & Memory Commands
+
+| Name | Description |
+| ---- | ----------- |
+| `/init` | Use Clause to help write itself a `CLAUDE.md` file summarising the current project, and key build/test/run commands for the project |
+| `/context` | Detailed breakdown of current usage of the context window in terms of tokens: system prompt, tools, agents, skills, etc. |
+| `/compact` | Ask Claude to summarise the conversation history and replace it with the summary, acting as compaction of the context, in order to save tokens in the context window. You can also add a prompt emphasising which aspects of the history to summarise |
+| `/memory` | Opens menu to edit the various Claude memory files: project `CLAUDE.md`, user-specific `CLAUDE.md`, auto-memory folder maintained by Claude itself, agent memory |
