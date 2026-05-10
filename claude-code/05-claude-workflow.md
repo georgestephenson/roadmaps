@@ -1,5 +1,9 @@
 # Claude Workflow
 
+At its most basic, Claude works using the agentic loop: gather context (index codebase, read `CLAUDE.md`, read relevant skills, other context), take action (write a plan and/or execute changes), and verify results (tests, linting).
+
+MCP servers can be used to coordinate any of these steps with external resources.
+
 ## Permission Modes
 
 - default, ask permission before tool use
@@ -18,3 +22,12 @@ For complex problems, letting Claude jump straight into start coding can end up 
 Entering plan mode will get Claude to write a detailed implementation plan in a markdown file. You can then review the plan, work with Claude to feedback on the plan and make amendments, and once satisfied, you can exit plan mode and ask Claude to implement the plan.
 
 The downside of plan mode is adding overhead on tokens expense. For small fixes, ask Claude to do it directly.
+
+## Manage Sessions
+
+- History of each session is stored in `~/.claude/projects/`.
+- Sessions can be rewinded, resumed, and forked
+- Use `claude --continue` or `-c` to resume previous session, or `claude --resume` or `-r` for a menu of previous sessions to resume (or pass ID as parameter). Can also use `/resume` in same way to switch between sessions when you're already in Claude Code CLI.
+- Run `context` to see what is taking up context window space
+- Use skills and subagents to make best use of context window space
+- Use `/rewind` or Esc+Esc to go back in time within the current session.
