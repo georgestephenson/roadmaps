@@ -28,6 +28,8 @@
 
 ## Writing a good CLAUDE.md
 
+`CLAUDE.md` is the persistent memory and onboarding manual for Claude Code, always included in the context window for every session.
+
 - Use `/init` to ask Claude to create one by analysing your codebase.
 - No format required, but keep it short and human-readable. Probably advisable to use standard markdown syntax.
 - For domain-specific knowledge/workflows, use **Claude skills**. The `CLAUDE.md` is loaded for every session so should be relevant for all or at least most requests.
