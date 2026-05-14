@@ -41,3 +41,7 @@ Skill-creator skill can also be used to modify skills for new requirements. It c
 ## Claude Code Skills
 
 - Examples given of different skills for: adding CLI commands, generating CLI tests, reviewing CLI commands
+
+## Skills for MCP
+
+Using Claude skills with MCP dramatically improves how Claude interacts with MCP. Rather than inferring tool usage from base principles, skills can provide guidance on how to best use the tools.

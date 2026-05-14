@@ -249,3 +249,7 @@ Note these agents can run as as the main thread agent using `claude --agent` or 
 - Control tools the agent can run
 - Control which subagents an agent can run as the main agent
 - Tasks can be automatically delegated to agents based on their `description` in the agent frontmatter. Or you can explicitly run them (with explicit prompts, or explicit control)
+
+## Prompt Caching
+
+Claude intelligently uses prompt caching at strategic points, for example including `CLAUDE.md`  and project structure in cache. This produces a 90% discount on input tokens and an 85% reduction in latency.
