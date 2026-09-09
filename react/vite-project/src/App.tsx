@@ -3,12 +3,20 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import MyButton from './components/MyButton'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  function handleClick() {
+    setCount(count + 1);
+  }
+
   return (
     <>
+      <Header />
+
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -21,13 +29,8 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <MyButton count={count} onClick={handleClick} />
+        <MyButton count={count} onClick={handleClick} />
       </section>
 
       <div className="ticks"></div>
