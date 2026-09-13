@@ -70,3 +70,116 @@ export default function MyApp() {
     ```
 
     Same concept in Angular component inputs and outputs.
+
+## Conditional Rendering
+
+- Since your component is a JS function, you can add usual conditions (`if` and `else`, etc) to return different HTML.
+- Use `return null` to make the component show nothing. In practice it is better to conditionally include or exclude the component in its parent.
+- Use can use the logical AND operator `&&` as shorthand to render something if a condition is true
+  ``` JSX
+  return (
+    <li className="item">
+      {name} {isPacked && '✅'}
+    </li>
+  );
+  ```
+
+## Composition
+
+- You can pass JS objects as props
+
+``` JSX
+export default function Profile() {
+  return (
+    <Avatar
+      person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }}
+      size={100}
+    />
+  );
+}
+```
+
+Read the props by listing them in a function parameter
+
+``` JSX
+function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+```
+
+- React component functions accept a single argument, which is the props list as above (`{ person, size}`).
+
+You can write it both of these ways
+
+``` JSX
+function Avatar({ person, size }) {
+  // ...
+}
+```
+
+``` JSX 
+function Avatar(props) {
+  let person = props.person;
+  let size = props.size;
+  // ...
+}
+```
+
+- When you nest content in a JSX tag, the content is received in the parent in a prop called `children`
+
+``` JSX
+import Avatar from './Avatar.js';
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
+    </div>
+  );
+}
+
+export default function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+}
+```
+
+- Facebook themselves recommend using composition over inheritance for React components.
+  - Nesting components comprises the `children` prop
+  - You can also pass JSX content to a prop explicitly, e.g.
+    ``` JSX
+    <SplitPane
+      left={
+        <Contacts />
+      }
+      right={
+        <Chat />
+      } />
+    ```
+  - If you want to make a "special case" of another component, e.g. WelcomeDialog being a special case of Dialog, Then the WelcomeDialog function can just return a Dialog directly, with Dialog props specified
+    ``` JSX
+    function WelcomeDialog() {
+      return (
+        <Dialog
+          title="Welcome"
+          message="Thank you for visiting our spacecraft!" />
+      );
+    }
+    ```
